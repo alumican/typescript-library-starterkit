@@ -30,6 +30,13 @@ export function getTime():number {
 }
 
 /**
+ * This is stack trace test.
+ */
+export function throwException():void {
+	throw new Error();
+}
+
+/**
  * This is variable sample.
  */
 export const PI2 = Math.PI * 2;

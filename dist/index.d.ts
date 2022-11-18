@@ -19,6 +19,10 @@ export declare class Person {
  */
 export declare function getTime(): number;
 /**
+ * This is stack trace test.
+ */
+export declare function throwException(): void;
+/**
  * This is variable sample.
  */
 export declare const PI2: number;

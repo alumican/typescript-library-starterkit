@@ -1,6 +1,6 @@
 import PluginCleanup from 'rollup-plugin-cleanup';
 import PluginNodeResolve from '@rollup/plugin-node-resolve';
-import PluginTypescript from "@rollup/plugin-typescript";
+import PluginTypescript from '@rollup/plugin-typescript';
 import {terser as PluginTerser} from 'rollup-plugin-terser';
 
 import pkg from "./package.json";
@@ -10,9 +10,15 @@ const document = process.env.BUILD === 'document';
 
 function getPlugins() {
 	const plugins = [
-		PluginTypescript({ tsconfig: './tsconfig.' + (document ? 'doc' : 'main') + '.json' }),
-		PluginNodeResolve({ preferBuiltins: false }),
-		PluginCleanup({ comments: 'none' }),
+		PluginTypescript({
+			tsconfig: './tsconfig.' + (document ? 'doc' : 'main') + '.json',
+		}),
+		PluginNodeResolve({
+			preferBuiltins: false,
+		}),
+		PluginCleanup({
+			comments: 'none',
+		}),
 	];
 	if (production) {
 		plugins.push(PluginTerser());
@@ -25,6 +31,8 @@ function getOutput() {
 		file: production ? pkg.main.replace('.js', '.min.js') : pkg.main,
 		format: 'umd',
 		name: pkg.config.namespace,
+		extend: true,
+		sourcemap: true,
 	};
 	if (!document) {
 		output['banner'] = `/*! ${pkg.name} ${pkg.version} (c) ${(new Date()).getFullYear()} ${pkg.author}, licensed under the ${pkg.license}, more information ${pkg.repository.url} */`;
