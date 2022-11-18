@@ -1,10 +1,63 @@
-export * from './typedef/Hash';
+/**
+ * This is class sample.
+ */
+export class Person {
 
-export * from './core/Type';
-export * from './core/ArrUtil';
-export * from './core/DateUtil';
-export * from './core/NumUtil';
-export * from './core/ObjUtil';
-export * from './core/StrUtil';
+	/**
+	 * @param name - your name
+	 */
+	constructor(name:string) {
+		this.name = name;
+	}
 
-export * from './math/Easing';
+	/**
+	 * This function return greeting.
+	 * @returns greeting text
+	 */
+	public sayHello():string {
+		return `Hello, I'm ${this.name}`;
+	}
+
+	private readonly name:string;
+}
+
+/**
+ * This is function sample.
+ * @returns timestamp
+ */
+export function getTime():number {
+	return Date.now();
+}
+
+/**
+ * This is variable sample.
+ */
+export const PI2 = Math.PI * 2;
+
+/**
+ * This is enum sample.
+ */
+export enum Menu {
+	toast,
+	sandwich,
+	egg,
+	milk,
+	coffee,
+}
+
+/**
+ * This is interface sample.
+ */
+export interface Lunch {
+
+	/**
+	 * get ordered menu
+	 * @returns timestamp
+	 */
+	getMenu():Menu;
+
+	/**
+	 * get ordered price
+	 */
+	getPrice():number;
+}

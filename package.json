@@ -19,7 +19,7 @@
     "watch": "run-p *:watch",
     "server": "run-p *:server",
     "clean": "rimraf dist doc",
-    "uninstall": "(npm run clean) && (rimraf node_modules) && (rm package-lock.json)",
+    "uninstall": "(rimraf node_modules) && (rm package-lock.json)",
     "format": "prettier --parser typescript --write \"./src/**/*.ts\"",
     "main:build": "run-s main:build:*",
     "main:build:dev": "rollup --config rollup.config.js",
