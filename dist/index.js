@@ -1,8 +1,8 @@
-/*! typescript-library-starterkit 1.0.1 (c) 2022 alumican, licensed under the MIT, more information https://github.com/alumican/typescript-library-starterkit */
+/*! typescript-library-starterkit 1.0.2 (c) 2022 alumican, licensed under the MIT, more information https://github.com/alumican/typescript-library-starterkit */
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.yournamespace = {}));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.sample = {}));
 })(this, (function (exports) { 'use strict';
 
     /**
