@@ -31,17 +31,27 @@ function getOutput() {
 		file: production ? pkg.main.replace('.js', '.min.js') : pkg.main,
 		format: 'umd',
 		name: pkg.config.namespace,
+		globals: {},
 		extend: true,
 		sourcemap: true,
 	};
+	output.globals[pkg.config.namespace] = pkg.config.namespace;
 	if (!document) {
 		output['banner'] = `/*! ${pkg.name} ${pkg.version} (c) ${(new Date()).getFullYear()} ${pkg.author}, licensed under the ${pkg.license}, more information ${pkg.repository.url} */`;
 	}
 	return output;
 }
 
-export default {
-	input: './src/index.ts',
-	output: getOutput(),
-	plugins: getPlugins(),
+function getDefault() {
+	const def = {
+		input: './src/index.ts',
+		output: getOutput(),
+		plugins: getPlugins(),
+	}
+	if (pkg.config.externalDependencies) {
+		def.external = pkg.config.externalDependencies;
+	}
+	return def;
 }
+
+export default getDefault();

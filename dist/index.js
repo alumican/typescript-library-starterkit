@@ -1,4 +1,4 @@
-/*! typescript-library-starterkit 1.0.6 (c) 2022 alumican, licensed under the MIT, more information https://github.com/alumican/typescript-library-starterkit */
+/*! typescript-library-starterkit 1.0.7 (c) 2022 alumican, licensed under the MIT, more information https://github.com/alumican/typescript-library-starterkit */
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
     typeof define === 'function' && define.amd ? define(['exports'], factory) :
