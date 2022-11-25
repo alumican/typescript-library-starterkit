@@ -1,13 +1,18 @@
 {
   "name": "typescript-library-starterkit",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "author": "alumican",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
-  "repository": { "type": "git", "url": "https://github.com/alumican/typescript-library-starterkit" },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alumican/typescript-library-starterkit"
+  },
   "config": {
     "namespace": "sample",
     "port_example": 3000,
